@@ -4,7 +4,7 @@
         Copyright 2018-2019 Brainbean Apps
         License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
     -->
-
+    <!--
     <record id="account_analytic_line_tree_user" model="ir.ui.view">
         <field name="name">account.analytic.line.tree.user</field>
         <field name="model">account.analytic.line</field>
@@ -28,6 +28,7 @@
             </xpath>
         </field>
     </record>
+    -->
     <record id="account_analytic_line_search" model="ir.ui.view">
         <field name="name">account.analytic.line.search</field>
         <field name="model">account.analytic.line</field>

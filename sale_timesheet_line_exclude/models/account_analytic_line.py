@@ -10,7 +10,7 @@ class AccountAnalyticLine(models.Model):
 
     exclude_from_sale_order = fields.Boolean(
         string="Non-billable",
-        related="non_allow_billable",
+        #related="non_allow_billable",
         readonly=False,
         help="Checking this would exclude this timesheet entry from Sale Order",
         store=True,
@@ -89,7 +89,7 @@ class AccountAnalyticLine(models.Model):
 
     @api.depends(
         "exclude_from_sale_order",
-        "non_allow_billable",
+        #"non_allow_billable",
     )
     def _compute_timesheet_invoice_type(self):
         super(AccountAnalyticLine, self)._compute_timesheet_invoice_type()
@@ -97,7 +97,7 @@ class AccountAnalyticLine(models.Model):
             if (
                 line.project_id
                 and line.task_id
-                and (line.exclude_from_sale_order or line.non_allow_billable)
+                and line.exclude_from_sale_order
             ):
                 line.timesheet_invoice_type = "non_billable"
 
