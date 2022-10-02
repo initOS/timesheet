@@ -9,7 +9,7 @@ def pre_init_hook(cr):
             cr,
             {
                 "account_analytic_line": [
-                    ("non_allow_billable", "exclude_from_sale_order", None),
+                    ("order_id", "exclude_from_sale_order", None),
                 ],
             },
         )
